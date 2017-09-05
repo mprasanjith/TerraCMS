@@ -1,0 +1,350 @@
+/**  
+ *  Globals
+ */
+
+* {
+    font-family: 'Lato', arial, helvetica;
+    color: #222;
+}
+
+
+/* Set header image to full-page  */
+
+html,
+body,
+.body-content {
+    height: 100%;
+    width: 100%;
+}
+
+
+/**  
+ *  Headings and Paragraphs
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Chivo", arial, helvetica;
+    letter-spacing: 2px;
+}
+
+h1,
+.h1 {
+    font-size: 3em;
+}
+
+h2,
+.h2 {
+    font-size: 2.5em;
+}
+
+h3,
+.h3 {
+    font-size: 2.25em;
+}
+
+h4,
+.h4 {
+    font-size: 2em;
+}
+
+h5,
+.h5 {
+    font-size: 1.5em;
+}
+
+h6,
+.h6 {
+    font-size: 1.25em;
+}
+
+p {
+    letter-spacing: 1px;
+}
+
+.spaced {
+    letter-spacing: 2px;
+}
+
+
+/**  
+ *  Navigation
+ */
+
+
+/* Main Navigation  */
+
+.main-nav .nav-link,
+.main-nav .btn,
+.main-nav .dropdown-menu {
+    text-transform: uppercase;
+}
+
+.nav-item:hover,
+.main-nav .active {
+    text-decoration: underline;
+}
+
+.main-nav .dropdown-menu {
+    background-color: rgb(0,0,0);
+}
+
+.main-nav .dropdown-item {
+    background-color: rgb(0,0,0, 0.8);
+}
+
+
+/**  
+ *  Elements
+ */
+
+
+/* Buttons  */
+
+.btn-outline-primary {
+    font-family: 'Lato', arial, helvetica;
+    color: #003366;
+    border: 1.2px #003366 solid;
+}
+
+.btn-outline-primary:hover {
+    color: white;
+    background-color: #003366;
+    border: 1.2px #003366 solid;
+}
+
+.btn-outline-primary span {
+    color: #008899;
+}
+
+.btn-outline-secondary {
+    font-family: 'Lato', arial, helvetica;
+    color: white;
+    border: 1.2px white solid;
+}
+
+.btn-outline-secondary:hover {
+    color: #003366;
+    background-color: #FFF;
+    border: 1.2px white solid;
+}
+
+.btn-lg {
+    font-size: 1.1em;
+}
+
+.btn-slim {
+    padding: 4px 20px;
+}
+
+
+/* Input groups */
+
+.input-group .input-group-addon,
+.input-group .form-control {
+    color: #003366;
+    border: 1.2px #003366 solid;
+    background-color: white;
+}
+
+
+/* Carousels */
+
+
+/* Set carousel height */
+
+.carousel-item {
+    height: 600px;
+}
+
+
+/* Center images in carousel */
+
+.carousel-item>img {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+/* Center align caption */
+
+.carousel-caption {
+    position: absolute;
+    top: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+/* Image thumbnail item */
+
+.image-item {
+    padding: 20px 10px;
+}
+
+.image-item:hover {
+    background-color: lightgrey;
+}
+
+.image-item a:hover {
+    text-decoration: none;
+}
+
+
+/* Content cards */
+
+.content-card {
+    position: relative;
+    padding: 20px;
+}
+
+.content-card .card-info {
+    position: absolute;
+    bottom: 20px;
+    left: 0px;
+}
+
+.content-card .card-info-bg {
+    background-color: black;
+    opacity: 0.6;
+    margin-left: 20px;
+}
+
+.content-card .card-info-bg:hover {
+    opacity: 0.8;
+}
+
+.content-card .icon {
+    padding-left: 30px;
+    text-align: left;
+    font-size: 30px;
+}
+
+.content-card .icon:hover {
+    color: #0067CE;
+}
+
+.content-card .icon-bg {    
+    padding: 10px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.content-card .card-title {
+    padding-left: 30px;
+    text-align: left;
+    font-size: 20px;
+}
+
+
+/**  
+ *  Sections
+ */
+
+
+/* Full-page section */
+
+.full-page-block {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    text-align: center;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+
+/* Full-width block */
+
+.full-width-block {
+    position: relative;
+    width: 100%;
+    min-height: 60%;
+    height: 60%;
+    text-align: center;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+
+/* Fullwidth slider section */
+
+.slider-block {
+    height: 600px;
+    width: auto;
+}
+
+
+/* Text only section  */
+
+.text-block {
+    padding: 80px 0;
+    text-align: center;
+}
+
+
+/* Text only section - dark background */
+
+.text-block-inverted {
+    background-color: #003366;
+    color: white;
+}
+
+.text-block-inverted * {
+    color: white;
+}
+
+.text-block-inverted a:hover {
+    color: white;
+}
+
+.text-block-inverted .input-group .input-group-addon,
+.text-block-inverted .input-group .form-control {
+    color: white;
+    border: 1.2px white solid;
+    background-color: #003366;
+}
+
+
+/* Footer section */
+
+.footer-block {
+    background-color: #15244c;
+    color: white;
+    padding-top: 20px;
+}
+
+
+/* Sub-footer section */
+
+.subfooter-block {
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    background-color: #D3D3D3;
+    color: black;
+}
