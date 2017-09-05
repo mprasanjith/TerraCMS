@@ -15,7 +15,7 @@
     <li class="nav-item <?php echo ($activePage == "gallery") ? "active" : "" ?>"><a class="nav-link text-white" href="gallery.php">Gallery</a></li>
     <li class="nav-item <?php echo ($activePage == "action") ? "active" : "" ?>"><a class="nav-link text-white" href="take-action.php">Take Action</a></li>
     <li class="nav-item <?php echo ($activePage == "store") ? "active" : "" ?>"><a class="nav-link text-white" href="store.php">Store</a></li>
-    <li class="nav-item <?php echo ($activePage == "account") ? "active" : "" ?>"><a class="nav-link text-white" href="signup.php">Account</a></li>
+    <li class="nav-item <?php echo ($activePage == "account") ? "active" : "" ?>"><a class="nav-link text-white" href="account.php">Account</a></li>
     <li class="nav-item"><a class="btn btn-outline-secondary mt-1" href="#donate">Donate</a></li>
     </ul>
 </div>
