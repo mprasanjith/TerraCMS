@@ -9,10 +9,8 @@
     require_once("./resources/db.php");
     $conn = connectDatabase($db);
     
-    // render header
+    // render header and navigation
     require_once(TEMPLATES_PATH . "/header.php");
-
-    // render navigation
     require_once(TEMPLATES_PATH . "/navigation.php");
 ?>
 
