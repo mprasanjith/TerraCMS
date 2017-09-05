@@ -4,6 +4,10 @@
     
     // render header
     require_once(TEMPLATES_PATH . "/header.php");
+
+    // render navigation
+    $activePage = 'home';
+    require_once(TEMPLATES_PATH . "/navigation.php");
 ?>
 
 <div id="container">
