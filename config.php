@@ -18,7 +18,6 @@ $db = array(
 define("TEMPLATES_PATH", realpath(dirname(__FILE__) . '/templates'));
 define("BACKEND_URL", './backend');
 define("BACKEND_PATH", realpath(dirname(__FILE__) . '/backend'));
-define("RESOURCES_URL", './resources');
 
 /**
  * Error Reporting

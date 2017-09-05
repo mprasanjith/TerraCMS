@@ -1,6 +1,6 @@
 <?php
-    $pageId = 1;
-    $activePage = 'home';
+    $pageId = 2;
+    $activePage = 'account';
 
     // load config file
     require_once("./config.php");
