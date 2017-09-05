@@ -3,10 +3,10 @@
     $activePage = 'home';
 
     // load config file
-    require_once("./resources/config.php");
+    require_once("./config.php");
 
     // setup database connection
-    require_once("./resources/db.php");
+    require_once(BACKEND_PATH . "/db.php");
     $conn = connectDatabase($db);
     
     // render header and navigation

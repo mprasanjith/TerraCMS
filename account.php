@@ -3,10 +3,10 @@
     $activePage = 'home';
 
     // load config file
-    require_once("./resources/config.php");
+    require_once("./config.php");
 
     // setup database connection
-    require_once("./resources/db.php");
+    require_once(BACKEND_PATH . "/db.php");
     $conn = connectDatabase($db);
     
     // render header and navigation
@@ -45,7 +45,7 @@ background-position: top;" data-paroller-factor="0.3">
         <div class="row">
             <div class="col-lg-12">
                 <h5 class="pb-3" style="color: white; ">Login</h5>
-                <form class="mx-auto" style="width: 400px;" action="./resources/login.php" method="POST">
+                <form class="mx-auto" style="width: 400px;" action="<?php echo BACKEND_URL . '/login.php' ?>" method="POST">
                     <div class="form-row">
                         <label for="inputEmailL" class="col-sm-4 col-form-label" style="color: white; ">Email</label>
                         <div class="col-sm-8">
@@ -86,7 +86,7 @@ background-position: top;" data-paroller-factor="0.3">
         <div class="row">
             <div class="col-12">
                 <h5 class="text-center pb-3" style="color: white;">Register</h5>
-                <form class="mx-auto" style="width: 400px;" action="./resources/register.php" method="POST">
+                <form class="mx-auto" style="width: 400px;" action="<?php echo BACKEND_URL . '/register.php' ?>" method="POST">
                     <div class="form-row pb-1" >
                         <label for="inputFName" class="col-sm-4 col-form-label" style="color: white;">First Name</label>
                         <div class="col-sm-4" >

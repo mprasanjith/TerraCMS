@@ -1,9 +1,9 @@
 <?php
     // load config file
-    require_once("./config.php");
+    require_once("../config.php");
 
     // setup database connection
-    require_once("./db.php");
+    require_once(BACKEND_PATH . "/db.php");
     $conn = connectDatabase($db);
 
     $email = $_POST['login']['email'];
