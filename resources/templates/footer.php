@@ -3,16 +3,16 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <img class="img-fluid" src="images/design/logo-white.png" alt="GreenEarth Foundation Logo">
+                <img class="img-fluid" src="resources/images/design/logo-white.png" alt="GreenEarth Foundation Logo">
             </div>
             <div class="col-md-3">
                 <ul class="nav flex-column align-left">
-                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="work.html">Our Work</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="gallery.html">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="signup.html">Account</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="take-action.html">Take Action</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="index.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="about.php">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="work.php">Our Work</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="gallery.php">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="account.php">Account</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="take-action.php">Take Action</a></li>
                 </ul>
             </div>
 
@@ -40,13 +40,13 @@
 
 
 <!--  JavaScript dependencies  -->
-<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="js/jquery.paroller.min.js"></script>
-<script type="text/javascript" src="js/popper.min.js"></script>
-<script type="text/javascript" src="js/tether.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="resources/js/jquery.paroller.min.js"></script>
+<script type="text/javascript" src="resources/js/popper.min.js"></script>
+<script type="text/javascript" src="resources/js/tether.min.js"></script>
+<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
 
-<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="resources/js/script.js"></script>
 </body>
 
 </html>

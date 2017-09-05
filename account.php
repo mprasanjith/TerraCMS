@@ -15,7 +15,7 @@
 ?>
 
 <!-- Image-based header  -->
-<header class="full-page-block parallax d-flex align-items-center" style="background-image: url('images/design/login-header.jpg'); background-position: top;"
+<header class="full-page-block parallax d-flex align-items-center" style="background-image: url('resources/images/design/login-header.jpg'); background-position: top;"
 data-paroller-factor="0.3">
     <div class="container">
         <div class="row">
@@ -39,7 +39,7 @@ data-paroller-factor="0.3">
     </div>
 </section>
 
-<section id="login" class="full-page-block parallax d-flex align-items-center" style="background-image: url('images/design/login-image-1.jpg'); 
+<section id="login" class="full-page-block parallax d-flex align-items-center" style="background-image: url('resources/images/design/login-image-1.jpg'); 
 background-position: top;" data-paroller-factor="0.3">
     <div class="container">    
         <div class="row">
@@ -80,7 +80,7 @@ background-position: top;" data-paroller-factor="0.3">
 </section>
 
 
-<section id="register" class="full-page-block parallax d-flex align-items-center" style="background-image: url('images/design/login-image-2.jpg'); 
+<section id="register" class="full-page-block parallax d-flex align-items-center" style="background-image: url('resources/images/design/login-image-2.jpg'); 
 background-position: top;" data-paroller-factor="0.3">
     <div class="container">
         <div class="row">
@@ -143,6 +143,9 @@ background-position: top;" data-paroller-factor="0.3">
 </section>
 
 <?php
+    // render donation block
+    require_once(TEMPLATES_PATH . "/donate.php");
+
     // render footer
     require_once(TEMPLATES_PATH . "/footer.php");
 

@@ -1,7 +1,7 @@
 <!--      Header Navigation      -->
 <nav class="main-nav navbar navbar-dark navbar-expand-lg fixed-top" style="background-color: rgba(0,0,0, 0.5);">
-<a class="navbar-brand" href="index.html">
-    <img src="images/design/logo-white.png" width="auto" height="60" alt="GreenEarth Foundation">
+<a class="navbar-brand" href="index.php">
+    <img src="resources/images/design/logo-white.png" width="auto" height="60" alt="GreenEarth Foundation">
 </a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeaderContent" aria-controls="navbarHeaderContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
