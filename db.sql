@@ -12,7 +12,8 @@ CREATE TABLE Users (
     Address_Line1 VARCHAR(50),
     Address_Line2 VARCHAR(50),
     City VARCHAR(50),
-    Country VARCHAR(30)
+    Country VARCHAR(30),
+    userType INT DEFAULT 0
 );
 
 CREATE TABLE ShopItems(
@@ -45,7 +46,7 @@ CREATE TABLE Order_Items(
 CREATE TABLE Pages(
 	pageId INT PRIMARY KEY AUTO_INCREMENT,
     pageName VARCHAR (30),
-    viewCount INT ,
+    viewCount INT DEFAULT 0,
     pageURL VARCHAR (100)
 );
 
