@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     // load config file
     require_once("../config.php");
 
@@ -13,12 +15,18 @@
     $sqlCheckUser = "SELECT DISTINCT * FROM Users WHERE email='$email' AND passwrd='$password'";
     $queryResult = queryDatabase($conn, $sqlCheckUser);
 
+    // Set sessions and redirect accordingly
     if (mysqli_num_rows($queryResult))
     {
-        echo "Welcome user.";
+        // Logged in.
+        $row = mysqli_fetch_assoc($queryResult);
+        $_SESSION['user'] = $row['userId'];
+        header("Location: /");
+        die();
     }
     else
     {
+        // Wrong login.
         echo "Wrong login.";
     }
 ?>

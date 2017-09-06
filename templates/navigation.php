@@ -15,8 +15,22 @@
     <li class="nav-item <?php echo ($activePage == "gallery") ? "active" : "" ?>"><a class="nav-link text-white" href="gallery.php">Gallery</a></li>
     <li class="nav-item <?php echo ($activePage == "action") ? "active" : "" ?>"><a class="nav-link text-white" href="take-action.php">Take Action</a></li>
     <li class="nav-item <?php echo ($activePage == "store") ? "active" : "" ?>"><a class="nav-link text-white" href="store.php">Store</a></li>
-    <li class="nav-item <?php echo ($activePage == "account") ? "active" : "" ?>"><a class="nav-link text-white" href="account.php">Account</a></li>
-    <li class="nav-item"><a class="btn btn-outline-secondary mt-1" href="#donate">Donate</a></li>
+    
+    <?php
+        session_start();
+    
+        if (isset($_SESSION['user'])) {
+           // logged in
+           echo '<li class="nav-item"><a class="nav-link text-white" href="#donate">Donate</a></li>';
+           echo '<li class="nav-item"><a class="nav-link text-white" href="hub/index.php">Go to my account</a></li>';
+           echo '<li class="nav-item"><a class="btn btn-outline-secondary mt-1" href="logout.php">Logout</a></li>';
+         } else {
+           // not logged in
+           echo '<li class="nav-item"><a class="nav-link text-white" href="account.php">Signup / Signin</a></li>';
+           echo '<li class="nav-item"><a class="btn btn-outline-secondary mt-1" href="#donate">Donate</a></li>';
+         }
+        
+    ?>
     </ul>
 </div>
 </nav>
