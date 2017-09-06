@@ -8,10 +8,9 @@
 
     $email = $_POST['login']['email'];
     $password = $_POST['login']['password'];
-    $keepSignedIn = $_POST['login']['keepSignedIn'];
 
     // Check whether email exists in the database
-    $sqlCheckUser = "SELECT DISTINCT * FROM users WHERE email='$email' AND passwrd='$password'";
+    $sqlCheckUser = "SELECT DISTINCT * FROM Users WHERE email='$email' AND passwrd='$password'";
     $queryResult = queryDatabase($conn, $sqlCheckUser);
 
     if (mysqli_num_rows($queryResult))

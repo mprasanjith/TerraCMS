@@ -24,7 +24,7 @@
     if ($isValid) 
     {
         // Check whether email exists in the database
-        $sqlCheckUser = "SELECT DISTINCT * FROM users WHERE email='$email'";
+        $sqlCheckUser = "SELECT DISTINCT * FROM Users WHERE email='$email'";
         $queryResult = queryDatabase($conn, $sqlCheckUser);
 
         if (mysqli_num_rows($queryResult))
@@ -34,7 +34,7 @@
         else
         {
             // add user data to the database
-            $sqlCreateUser = "INSERT INTO users(firstName, lastName, email, passwrd, Address_Line1, Address_Line2, City, Country)
+            $sqlCreateUser = "INSERT INTO Users(firstName, lastName, email, passwrd, Address_Line1, Address_Line2, City, Country)
             VALUES('$firstName', '$lastName', '$email', '$password', '$addressL1', '$addressL2', '$city', '$country')";
 
             if (queryDatabase($conn, $sqlCreateUser)) 

@@ -4,9 +4,9 @@
  * Database Config
  */
 $db = array(
-    "dbname" => "greenearth",
+    "dbname" => "GreenEarth",
     "username" => "root",
-    "password" => "password",
+    "password" => "",
     "host" => "127.0.0.1",
     "port" => "3306"
 );
