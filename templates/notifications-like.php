@@ -12,8 +12,14 @@
                 success: function(response){
                     if (response == "liked") {
                         alertify.success("Thank you for liking!");
+                        setTimeout(function(){
+                            location.reload();
+                        }, 500);
                     } else if (response == "unliked") {
-                        alertify.success("You have unliked this project successfully.");
+                        alertify.success("You have unliked this project.");
+                        setTimeout(function(){
+                            location.reload();
+                        }, 500);
                     } else if (response == "notloggedin") {
                         alertify
                         .okBtn("Login")
