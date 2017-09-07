@@ -5,16 +5,25 @@
         // check if a projectId is available
         if (projectId) {
             
-            let xmlhttp = new XMLHttpRequest();
-            
-            xmlhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    console.log("Done.")
+            $.ajax({
+                url:"<?php echo BACKEND_URL ?>/like.php",
+                type:"GET",
+                data:{id : projectId},
+                success: function(response){
+                    if (response == "liked") {
+                        alertify.success("Thank you for liking!");
+                    } else if (response == "unliked") {
+                        alertify.success("You have unliked this project successfully.");
+                    } else if (response == "notloggedin") {
+                        alertify
+                        .okBtn("Login")
+                        .cancelBtn("Cancel")
+                        .confirm("You need to be logged in to like a project.", function () {
+                            window.location.replace("account.php");
+                        });
+                    }
                 }
-            };
-            
-            xmlhttp.open("GET", "<?php echo BACKEND_URL ?>/like.php?id=" + projectId, true);
-            xmlhttp.send();
+             });
         }
         
     }
