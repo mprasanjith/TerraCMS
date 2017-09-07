@@ -1,6 +1,7 @@
 <?php
-    $pageId = 7;
-    $activePage = 'work';
+    $pageId = 4;
+    $activePage = '';
+    $projectId = 1;
 
     // load config file
     require_once("../config.php");
@@ -12,16 +13,21 @@
     // render header and navigation
     require_once(TEMPLATES_PATH . "/header.php");
     require_once(TEMPLATES_PATH . "/navigation.php");
+    
+    
+    // notifications on liking / unliking
+    require_once(TEMPLATES_PATH . "/notifications-like.php");
 ?>
 
 <!-- Image-based header  -->
-<header class="full-page-block parallax d-flex align-items-center" style="background-image: url('resources/images/content/work-climate-header.jpg'); background-position: top;"
+<header class="full-page-block parallax d-flex align-items-center" style="background-image: url('/resources/images/content/work-climate-header.jpg'); background-position: top;"
     data-paroller-factor="0.3">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="text-white text-uppercase">Fighting Global Warming</h1>
                 <p class="text-white text-uppercase">To win the fight against climate change, it’s time for a renewable energy [r]evolution.</p>
+                <?php require_once(TEMPLATES_PATH . "/button-like.php"); ?>
             </div>
         </div>
     </div>
