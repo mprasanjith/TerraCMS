@@ -10,6 +10,7 @@
     <!--  CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="/resources/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/resources/css/font-linea.css" />
+    <link rel="stylesheet" type="text/css" href="/resources/css/font-linea-ecommerce.css" />
     <link rel="stylesheet" type="text/css" href="/resources/css/font-socicon.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Chivo">
     <link rel="stylesheet" type="text/css" href="/resources/css/featherlight.css" />

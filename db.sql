@@ -19,10 +19,10 @@ CREATE TABLE Users (
 CREATE TABLE ShopItems(
 	itemCode INT PRIMARY KEY AUTO_INCREMENT,
     itemName VARCHAR(30),
-    description VARCHAR(50),
-    price INT,
-    itemImage VARCHAR(40)
+    price DOUBLE(9,2),
+    itemImage VARCHAR(300)
 );
+
 CREATE TABLE ShopOrders(
 	orderId INT PRIMARY KEY AUTO_INCREMENT,
     userId INT,
@@ -108,8 +108,9 @@ INSERT INTO `Pages` (`pageId`, `pageName`, `viewCount`, `pageURL`) VALUES
 (5, 'Work - Forests', 0, '/work/forests.php'),
 (6, 'Work - Water', 0, '/work/water.php'),
 (7, 'Work', 0, '/work.php'),
-(8, 'Gallery', 0, '/gallery.php');
-(9, 'Take Action', 0, '/take-action.php');
+(8, 'Gallery', 0, '/gallery.php'),
+(9, 'Take Action', 0, '/take-action.php'),
+(10, 'Store', 0, '/store.php');
 
 INSERT INTO `Users` VALUES
 (1, 'Madusha', 'Prasanjith', 'mprasanjith@gmail.com', '123456', '123', 'ABC Lane', 'Colombo', 'Sri Lanka', 1);
@@ -136,3 +137,14 @@ INSERT INTO `Comments` (`commentData`, `galleryItemId`, `userId`) VALUES
 ('This is a test comment.', 1, 1),
 ('This is another test comment.', 1, 1),
 ('This is yet another test comment.', 1, 1);
+
+INSERT INTO `ShopItems` (`itemName`, `price`, `itemImage`) VALUES
+('Plain Mug', 4.99, '/resources/images/content/store-item-1.jpg'),
+('Mug - Quote 1', 5.99, '/resources/images/content/store-item-2.jpg'),
+('Mug - Quote 2', 5.99, '/resources/images/content/store-item-3.jpg'),
+('Protect T-Shirt', 14.99, '/resources/images/content/store-item-4.jpg'),
+('Treat Nature T-Shirt - Black', 14.99, '/resources/images/content/store-item-5.jpg'),
+('Treat Nature T-Shirt - Red', 14.99, '/resources/images/content/store-item-6.jpg'),
+('Earth Day T-Shirt', 14.99, '/resources/images/content/store-item-7.jpg'),
+('Respect Mother Nature Keychain', 1.99, '/resources/images/content/store-item-8.jpg'),
+('Endangered Species Keychain', 1.99, '/resources/images/content/store-item-9.jpg');

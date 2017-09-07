@@ -16,4 +16,13 @@ $(document).ready(function () {
 			window.location.hash = target;
 		});
 	});
+	
+	// setup simpleCart
+	simpleCart({
+    checkout: {
+      type: "PayPal",
+      email: "test@paypal.com"
+    },
+    cartStyle: "table"
+  });
 });
