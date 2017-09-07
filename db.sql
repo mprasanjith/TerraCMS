@@ -109,6 +109,7 @@ INSERT INTO `Pages` (`pageId`, `pageName`, `viewCount`, `pageURL`) VALUES
 (6, 'Work - Water', 0, '/work/water.php'),
 (7, 'Work', 0, '/work.php'),
 (8, 'Gallery', 0, '/gallery.php');
+(9, 'Take Action', 0, '/take-action.php');
 
 INSERT INTO `Users` VALUES
 (1, 'Madusha', 'Prasanjith', 'mprasanjith@gmail.com', '123456', '123', 'ABC Lane', 'Colombo', 'Sri Lanka', 1);
@@ -132,6 +133,6 @@ INSERT INTO `GalleryItems` (`itemType`, `itemURL`) VALUES
 ('video', 'PVu65ZTJBSk');
 
 INSERT INTO `Comments` (`commentData`, `galleryItemId`, `userId`) VALUES
-('Good', 1, 1),
-('Great', 1, 1),
-('Best', 1, 1);
+('This is a test comment.', 1, 1),
+('This is another test comment.', 1, 1),
+('This is yet another test comment.', 1, 1);
