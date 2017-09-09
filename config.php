@@ -22,7 +22,5 @@ define("BACKEND_PATH", realpath(dirname(__FILE__) . '/backend'));
 /**
  * Error Reporting
  */
-ini_set("error_reporting", "true");
-error_reporting(E_ALL|E_STRCT);
  
 ?>

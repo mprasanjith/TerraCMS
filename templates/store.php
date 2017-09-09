@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="/resources/css/font-linea-ecommerce.css" />
 <style type="text/css">
     .simpleCart_items * {
         color: #fff;
