@@ -17,7 +17,6 @@ body,
     width: 100%;
 }
 
-
 /**  
  *  Headings and Paragraphs
  */
@@ -347,4 +346,37 @@ p {
     margin-top: 20px;
     background-color: #D3D3D3;
     color: black;
+}
+
+
+/**  
+ *  Admin Panel
+ */
+ 
+/* Sidebar */
+.sidebar {
+    background-color: rgb(0, 0, 0); 
+    height: 100vh; 
+    z-index: 1;
+    padding-top: 90px;
+}
+
+.sidebar a {
+    color: white;
+}
+
+/* Navbar */
+.admin-nav {
+    background-color: rgb(0, 0, 0);
+}
+
+/* Headers */
+.admin-content h1, 
+.admin-content h2, 
+.admin-content h3, 
+.admin-content h4,
+.admin-content h5,
+.admin-content h6,
+.admin-content h7 {
+    font-family: "Lato", Arial, sans-serif;
 }

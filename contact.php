@@ -15,36 +15,6 @@
 ?>
 
 <script type="text/javascript">
-    // display validation feedback via bootstrap classes
-    function displayValidation(elem, status) {
-        let classes = elem.classList;
-        
-        if (status == false) {
-            classes.remove("is-valid");
-            classes.add("is-invalid");
-        } else {
-            classes.remove("is-invalid");
-            classes.add("is-valid");
-        }
-    }
-    
-    // validate string to be not empty
-    function validateStringNotEmpty(elem) {
-        let status = (elem.value) ? true : false;
-        
-        displayValidation(elem, status);
-        return status;
-    }
-    
-    // validate email
-    function validateEmail(elem) {
-        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        let status = re.test(elem.value);
-        
-        displayValidation(elem, status);
-        return status;
-    }
-    
 	// add event listeners
     window.onload = function() {
         let inputName = document.getElementById('inputName');

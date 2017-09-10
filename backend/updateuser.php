@@ -5,8 +5,9 @@
     // setup database connection
     require_once(BACKEND_PATH . "/db.php");
     $conn = connectDatabase($db);
-
+    
     // get POST request data
+    $userId = $_POST['userId'];
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
     $email = $_POST['email'];
@@ -19,39 +20,31 @@
 
     // Validate data
     $isValid = true;
+    if (!$userId) $isValid = false;
     if (!$firstName || !$lastName) $isValid = false;
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $isValid = false;
     if (!$password || !$password2 || $password != $password2) $isValid = false;
     if (!$addressL1 || !$addressL2 || !$city || !$country) $isValid = false;
+    
+    
+    
+    //  check if user exists in database
+    $queryUserData = "SELECT * from Users WHERE userId = $userId AND email = '$email'";
+    $queryResult = queryDatabase($conn, $queryUserData);
+    if (!mysqli_num_rows($queryResult)) $isValid = false;
 
     if ($isValid) 
     {
-        // Check whether email exists in the database
-        $sqlCheckUser = "SELECT DISTINCT * FROM Users WHERE email='$email'";
-        $queryResult = queryDatabase($conn, $sqlCheckUser);
-
-        if (mysqli_num_rows($queryResult))
-        {
-            echo "exists";
-        }
-        else
-        {
-            // add user data to the database
-            $sqlCreateUser = "INSERT INTO Users(firstName, lastName, email, passwrd, Address_Line1, Address_Line2, City, Country)
-            VALUES('$firstName', '$lastName', '$email', '$password', '$addressL1', '$addressL2', '$city', '$country')";
-
-            if (queryDatabase($conn, $sqlCreateUser)) 
-            {
-                echo "okay";
-            }
-            else
-            {
-                echo "error";
-            }                       
-        }
+        // Update user data
+        $sqlUpdateUser = "Update Users SET firstName='$firstName', lastName='$lastName', 
+        passwrd='$password', Address_Line1 = '$addressL1', Address_Line2 = '$addressL2',
+        City = '$city', Country = '$country' WHERE userId = $userId AND email = '$email'";
+        queryDatabase($conn, $sqlUpdateUser);
+        
+        echo "okay";
     }
     else
     {
-        echo "invalid";
+        echo "error";
     }
 ?>
