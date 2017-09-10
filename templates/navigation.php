@@ -14,6 +14,7 @@
     <li class="nav-item <?php echo ($activePage == "work") ? "active" : "" ?>"><a class="nav-link text-white" href="/work.php">Our Work</a></li>
     <li class="nav-item <?php echo ($activePage == "gallery") ? "active" : "" ?>"><a class="nav-link text-white" href="/gallery.php">Gallery</a></li>
     <li class="nav-item <?php echo ($activePage == "action") ? "active" : "" ?>"><a class="nav-link text-white" href="/take-action.php">Take Action</a></li>
+    <li class="nav-item <?php echo ($activePage == "contact") ? "active" : "" ?>"><a class="nav-link text-white" href="/take-action.php">Contact</a></li>
     <li class="nav-item <?php echo ($activePage == "store") ? "active" : "" ?>"><a class="nav-link text-white" href="/store.php">Store</a></li>
     
     <?php

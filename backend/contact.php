@@ -6,11 +6,11 @@
     require_once(BACKEND_PATH . "/db.php");
     $conn = connectDatabase($db);
 
-    $name = $_POST['contact']['name'];
-    $email = $_POST['contact']['email'];
-    $message = $_POST['contact']['message'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
 
-    if ($email) {
+    if ($name && $email && $message) {
         // use wordwrap() if lines are longer than 70 characters
         $msg = wordwrap($message, 70);
         
@@ -19,7 +19,8 @@
         
         // send email
         mail("mprasanjith@gmail.com", "Contact Form Message - $name", $msg, $headers);
-        
         echo "sent";
+    } else {
+        echo "error";
     }
 ?>

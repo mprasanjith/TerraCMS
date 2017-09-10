@@ -13,6 +13,7 @@
                     <li class="nav-item"><a class="nav-link text-white" href="/gallery.php">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="/account.php">Account</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="/take-action.php">Take Action</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="/contact.php">Contact</a></li>
                 </ul>
             </div>
 

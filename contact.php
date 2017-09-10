@@ -1,6 +1,6 @@
 <?php
-    $pageId = 3;
-    $activePage = 'about';
+    $pageId = 11;
+    $activePage = 'contact';
 
     // load config file
     require_once("./config.php");
@@ -13,6 +13,115 @@
     require_once(TEMPLATES_PATH . "/header.php");
     require_once(TEMPLATES_PATH . "/navigation.php");
 ?>
+
+<script type="text/javascript">
+    // display validation feedback via bootstrap classes
+    function displayValidation(elem, status) {
+        let classes = elem.classList;
+        
+        if (status == false) {
+            classes.remove("is-valid");
+            classes.add("is-invalid");
+        } else {
+            classes.remove("is-invalid");
+            classes.add("is-valid");
+        }
+    }
+    
+    // validate string to be not empty
+    function validateStringNotEmpty(elem) {
+        let status = (elem.value) ? true : false;
+        
+        displayValidation(elem, status);
+        return status;
+    }
+    
+    // validate email
+    function validateEmail(elem) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        let status = re.test(elem.value);
+        
+        displayValidation(elem, status);
+        return status;
+    }
+    
+	// add event listeners
+    window.onload = function() {
+        let inputName = document.getElementById('inputName');
+    	inputName.addEventListener("keyup", function () {
+    		validateStringNotEmpty(inputName);
+    	});
+    
+        let inputEmail = document.getElementById('inputEmail');
+    	inputEmail.addEventListener("keyup", function () {
+    		validateEmail(inputEmail);
+    	});
+    
+        let inputMessage = document.getElementById('inputMessage');
+    	inputMessage.addEventListener("keyup", function () {
+    		validateStringNotEmpty(inputMessage);
+    	});
+    };
+	
+	// processing form on submission
+	function validateForm() {
+	    let inputName = document.getElementById('inputName');
+	    let inputEmail = document.getElementById('inputEmail');
+	    let inputMessage = document.getElementById('inputMessage');
+	    
+        const validName = validateStringNotEmpty(inputName);
+        const validEmail = validateEmail(inputEmail);
+        const validMessage = validateStringNotEmpty(inputMessage);
+        
+        let isValid = true;
+        let errorMessage = "<b class='text-white'>The following errors were found: </b><br>";
+        
+        if (!validName) {
+            isValid = false;
+            errorMessage += "Please enter your name.<br>";
+        }
+        
+        if (!validEmail) {
+            isValid = false;
+            errorMessage += "Please enter a valid email address.<br>";
+        }
+        
+        if (!validMessage) {
+            isValid = false;
+            errorMessage += "Please enter a message.<br>";
+        }
+        
+        if (!isValid) {
+            alertify.error(errorMessage);
+        } else {
+            processForm();
+        }
+    }
+    
+    function processForm() {
+        let inputName = document.getElementById('inputName');
+	    let inputEmail = document.getElementById('inputEmail');
+	    let inputMessage = document.getElementById('inputMessage');
+        
+        $.ajax({
+                url:"/<?php echo BACKEND_URL ?>/contact.php",
+                type:"POST",
+                data:{
+                    name: inputName.value,
+                    email: inputEmail.value,
+                    message: inputMessage.value
+                },
+                success: function(response){
+                    if (response == "sent") {
+                        alertify.success("Thank you for contacting us! We will get back to you soon.");
+                        document.getElementById('contactform').reset();
+                    } else {
+                        alertify.error("Error submitting the form. Please check the form and try again.");
+                    }
+                }
+             });
+    }
+</script>
 
 <!-- Image-based header  -->
 <header class="full-width-block parallax d-flex align-items-center" style="background-image: url('resources/images/design/about-header.jpg'); background-position: top;"
@@ -31,23 +140,23 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <form action="<?php echo BACKEND_URL . '/contact.php' ?>" method="POST">
-                  <div class="form-group">
-                    <label for="inputName">Your Name</label>
-                    <input type="text" class="form-control" name="contact[name]" id="inputName" placeholder="Enter your name">
-                  </div>
+                <form id="contactform" novalidate>
+                    <div class="form-group">
+                        <label for="inputName">Your Name *</label>
+                        <input type="text" class="form-control" name="contact[name]" id="inputName" placeholder="Enter your name" required>
+                    </div>
                   
-                  <div class="form-group">
-                    <label for="inputEmail">Email address</label>
-                    <input type="email" class="form-control" name="contact[email]" id="emailInput" placeholder="Enter your email">
-                  </div>
-                  
-                  <div class="form-group">
-                    <label for="inputMessage">Message</label>
-                    <textarea class="form-control" name="contact[message]" id="inputMessage" rows="5" placeholder="Enter your message"></textarea>
-                  </div>
-                  
-                  <button type="submit" class="btn btn-outline-primary">Send</button>
+                    <div class="form-group">
+                        <label for="inputEmail">Email address *</label>
+                        <input type="email" class="form-control" name="contact[email]" id="inputEmail" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="inputMessage">Message *</label>
+                        <textarea class="form-control" name="contact[message]" id="inputMessage" rows="5" placeholder="Enter your message" required></textarea>
+                    </div>
+                    
+                    <button type="button" class="btn btn-outline-primary" onclick="validateForm();">Send</button>
                 </form>
             </div>
             <div class="col">

@@ -110,7 +110,8 @@ INSERT INTO `Pages` (`pageId`, `pageName`, `viewCount`, `pageURL`) VALUES
 (7, 'Work', 0, '/work.php'),
 (8, 'Gallery', 0, '/gallery.php'),
 (9, 'Take Action', 0, '/take-action.php'),
-(10, 'Store', 0, '/store.php');
+(10, 'Store', 0, '/store.php'),
+(11, 'Contact', 0, '/contact.php');
 
 INSERT INTO `Users` VALUES
 (1, 'Madusha', 'Prasanjith', 'mprasanjith@gmail.com', '123456', '123', 'ABC Lane', 'Colombo', 'Sri Lanka', 1);
